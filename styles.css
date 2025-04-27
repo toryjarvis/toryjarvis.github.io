@@ -1,0 +1,155 @@
+:root {
+  --background: #0f0f0f;
+  --text: #e0e0e0;
+  --accent: #b5b5b5;
+  --hover-accent: #ffffff;
+  --highlight: #d4af37;
+}
+
+body {
+    font-family: "Cal Sans", sans-serif;
+    background: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: 0.7px;
+}
+
+header {
+  padding: 15px 20px;
+  background: rgb(17, 17, 17);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: var(--highlight);
+}
+
+section {
+  padding: 40px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.name {
+    font-size: 3.7rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
+  background-image: url("./images/leaves.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.profile-image {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.contact-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.contact a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact a:hover {
+  color: var(--highlight);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.project {
+  background: #1a1a1a;
+  padding: 25px;
+  /* border: 2px solid var(--accent); */
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.project:hover {
+  transform: scale(1.03);
+  border-color: var(--highlight);
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.view-link {
+  color: var(--highlight);
+}
+
+h2:hover {
+  opacity: 0.9;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 2px solid var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.skills {
+  background-image: url("./images/leaves3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px 0;
+}
+
+.contact {
+  background-image: url("./images/leaves4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px 0;
+}
