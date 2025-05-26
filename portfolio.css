@@ -1,0 +1,104 @@
+.dev-portfolio {
+  background-image: url("./images/leaves.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.art-portfolio {
+  background-image: url("./images/leaves3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dev-screenshot {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.portfolio-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.portfolio-link:hover {
+  color: #f0f0f0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .dev-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .dev-project {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .dev-screenshot {
+    max-height: 300px;
+  }
+
+  .dev-project h3 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+
+  .dev-project p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-screenshot {
+    max-height: 200px;
+  }
+
+  .dev-project h3 {
+    font-size: 1.5rem;
+  }
+
+  .dev-project p {
+    font-size: 0.95rem;
+  }
+}
