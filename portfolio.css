@@ -1,104 +1,276 @@
-.dev-portfolio {
-  background-image: url("./images/leaves.jpg");
+/* note to self, just let this fly for a while */
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+.dev-portfolio,
+.art-portfolio {
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 20px;
+  padding: 40px 20px;
+}
+
+.dev-portfolio {
+  background-image: url("./images/leaves.jpg");
 }
 
 .art-portfolio {
   background-image: url("./images/leaves3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.dev-screenshot {
+.dev-gallery,
+.art-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0;
+}
+
+.dev-project,
+.carousel__slide {
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dev-screenshot,
+.carousel__image {
   width: 100%;
   height: auto;
   max-height: 500px;
   object-fit: contain;
   border-radius: 10px;
+  display: block;
+  margin: 0 auto 10px auto;
 }
 
 .portfolio-link {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  word-break: break-word;
 }
 
 .portfolio-link:hover {
-  color: #f0f0f0;
+  color: #c0c0c0;
+}
+
+.carousel__viewport {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.carousel__slide {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  background-color: rgb(17, 17, 17);
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  margin-bottom: 0;
+}
+
+.carousel__slide:nth-child(even) {
+  background-color: rgb(45, 45, 45);
+}
+
+.carousel__caption {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.carousel__caption h3 {
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+}
+
+.carousel__caption p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.carousel__viewport::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel__viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.carousel__viewport::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.599);
+  border-radius: 10px;
 }
 
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.modal:target {
+.modal:target,
+.modal[style*="display: flex"] {
   display: flex;
 }
 
 .modal img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 95vw;
+  max-height: 80vh;
+  border-radius: 10px;
+  width: auto;
+  height: auto;
 }
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
+  top: 16px;
+  right: 20px;
+  font-size: 32px;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  /* border-radius: 50%; */
+  padding: 2px 10px;
 }
 
-@media (max-width: 768px) {
-  .dev-gallery {
-    display: flex;
-    flex-direction: column;
+/* Tablet screens */
+@media (max-width: 900px) {
+  .dev-portfolio,
+  .art-portfolio {
+    padding: 20px 5px;
+  }
+
+  .dev-gallery,
+  .art-gallery {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .dev-project {
-    background-color: #1a1a1a;
+  .dev-project,
+  .carousel__slide {
     padding: 20px;
-    border-radius: 10px;
+    width: 100%;
   }
 
-  .dev-screenshot {
-    max-height: 300px;
+  .dev-screenshot,
+  .carousel__image {
+    max-height: 400px;
   }
 
-  .dev-project h3 {
-    font-size: 1.8rem;
-    margin-top: 10px;
-  }
-
-  .dev-project p {
-    font-size: 1rem;
-    line-height: 1.5;
+  .carousel__viewport {
+    gap: 8px;
+    min-height: 240px;
   }
 }
 
-@media (max-width: 480px) {
-  .dev-screenshot {
-    max-height: 200px;
+/* Mobile screens */
+@media (max-width: 600px) {
+  .dev-portfolio,
+  .art-portfolio {
+    padding: 10px 2px;
   }
 
-  .dev-project h3 {
-    font-size: 1.5rem;
+  .dev-gallery,
+  .art-gallery {
+    gap: 12px;
   }
 
-  .dev-project p {
+  .dev-project,
+  .carousel__slide {
+    padding: 10px;
+    border-radius: 7px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .dev-project h3,
+  .carousel__caption h3 {
+    font-size: 1.1rem;
+  }
+
+  .dev-project p,
+  .carousel__caption p {
     font-size: 0.95rem;
+  }
+
+  .dev-screenshot,
+  .carousel__image {
+    max-height: 150px;
+    border-radius: 6px;
+  }
+
+  .carousel__viewport {
+    min-height: 240px;
+    gap: 8px;
+  }
+
+  .modal {
+    padding: 8px;
+  }
+
+  .modal img {
+    max-width: 98vw;
+    max-height: 60vh;
+  }
+
+  .modal-close {
+    top: 8px;
+    right: 8px;
+    font-size: 28px;
+    padding: 1px 7px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 400px) {
+  .dev-project,
+  .carousel__slide {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .dev-screenshot,
+  .carousel__image {
+    max-height: 220px;
+  }
+
+  .dev-project h3,
+  .carousel__caption h3 {
+    font-size: 1rem;
+  }
+
+  .dev-project p,
+  .carousel__caption p {
+    font-size: 0.95rem;
+  }
+
+  .modal-close {
+    top: 4px;
+    right: 4px;
+    font-size: 24px;
+    padding: 1px 5px;
   }
 }

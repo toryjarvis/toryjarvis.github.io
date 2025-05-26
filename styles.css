@@ -33,7 +33,7 @@ nav a {
   color: var(--text);
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 300;
   transition: color 0.3s ease-in-out;
 }
 
@@ -48,13 +48,14 @@ section {
 
 h2 {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--text);
   margin-bottom: 20px;
 }
 
 .name {
-  font-size: 3.7rem;
+  font-size: 3rem;
+  font-weight: 550;
 }
 
 .about {
@@ -91,7 +92,7 @@ h2 {
   color: var(--text);
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
@@ -136,7 +137,7 @@ footer {
   text-align: center;
   padding: 30px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text);
 }
 
@@ -251,7 +252,7 @@ footer {
 /* Extra small screens */
 @media (max-width: 480px) {
   nav {
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
   }
 
