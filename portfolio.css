@@ -34,6 +34,13 @@
   align-items: center;
 }
 
+.dev-screenshots {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
 .dev-screenshot,
 .carousel__image {
   width: 100%;
