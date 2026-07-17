@@ -8,28 +8,34 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <title>Tory Jarvis</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="portfolio.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body>
   <header>
     <nav>
-      <a href="portfolio.html" aria-label="portfolio-navlink">PORTFOLIO</a>
       <a href="#about" aria-label="about-navlink">ABOUT</a>
+      <a href="#work" aria-label="work-navlink">WORK</a>
       <a href="#contact" aria-label="contact-navlink">CONTACT</a>
     </nav>
+    <button id="palette-trigger" class="palette-trigger" aria-label="Open command palette">
+      Jump to...
+    </button>
   </header>
 
   <main>
     <section id="about" class="about">
       <div class="about-text">
+        <p class="eyebrow">// 01: about</p>
         <h2 class="name"><strong>Tory Jarvis</strong></h2>
         <p>
           I'm a software engineer, writer, designer, and musician, born with a
           love of creative expression.<br />
-          I'm always working on <i>something</i>, and simply put, I just love to make stuff.<br /><br />
+          I'm <i>always</i> working on something, and simply put, I just love to make stuff.<br /><br />
           This is an ever-growing and changing site to showcase my work, skills, and interests.<br />
         </p>
       </div>
@@ -38,33 +44,95 @@
 
     <section id="skills" class="skills">
       <div class="skills-text">
+        <p class="eyebrow">// 02: skills</p>
         <h2>Skills</h2>
-        <p>
-          I specialize in full-stack development. My skills include:
-          <br />
-          <br />
-          <strong>Programming Languages:</strong> JavaScript, TypeScript,
-          Python
-          <br />
-          <strong>Frontend Development:</strong> React, Redux, HTML/CSS,
-          Material UI
-          <br />
-          <strong>Backend & Server Technologies:</strong> Node.js, Express,
-          Firebase, PostgreSQL
-          <br />
-          <strong>Cloud & DevOps:</strong> AWS (S3, Lambda, API Gateway),
-          Docker
-          <br />
-          <strong>Development & Testing Tools:</strong> Git/GitHub, Postman,
-          Jupyter, Chrome DevTools
-          <br /><br />
+        <p>I specialize in full-stack development. My skills include, but are not limited to:</p>
+        
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <ul class="skill-pills">
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>React</li>
+          </ul>
+        </div>
 
-          Outside of software development, I have a passion for music, writing, video editing, and photography.
-        </p>
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <ul class="skill-pills">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>Go</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3>Infrastructure & DevOps</h3>
+          <ul class="skill-pills">
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </div>
+        
+        <div class="skill-group">
+          <h3>Tools & Others</h3>
+          <ul class="skill-pills">
+            <li>Git/GitHub</li>
+            <li>Jupyter</li>
+            <li>VS Code</li>
+            <li>Wondershare Filmora</li>
+            <li>Reason</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="work" class="dev-portfolio">
+      <p class="eyebrow">// 03: work</p>
+      <h2>My Dev Work</h2>
+      <div class="dev-gallery">
+        <div class="dev-project">
+          <div class="dev-screenshots">
+            <a href="#" class="clickable-modal">
+              <img class="dev-screenshot" src="/images/MelloSS.png" alt="Mello Screenshot" />
+            </a>
+          </div>
+          <h3>Mello</h3>
+          <p>
+            Full-stack kanban-style task management tool built for collaborative planning,
+            designed to emulate the utility and structure of internal tools used in modern tech teams.
+            Built with React, Material UI, Node.js, Express, Postgres, and JWT.
+            <br />
+            <a class="portfolio-link" href="https://github.com/toryjarvis/mello" target="_blank">
+              View on GitHub
+            </a>
+          </p>
+        </div>
+        <div class="dev-project">
+          <div class="dev-screenshots">
+            <a href="#" class="clickable-modal">
+              <img class="dev-screenshot" src="/images/CirrusSS.png" alt="Cirrus Screenshot" />
+            </a>
+          </div>
+          <h3>Cirrus</h3>
+          <p>
+            A general purpose link management platform with click analytics,
+            workspace organization, and a redirect pipeline.
+            Built with Go, PostgreSQL, and React.
+            <br />
+            <a class="portfolio-link" href="https://github.com/toryjarvis/cirrus" target="_blank">
+              View on GitHub
+            </a>
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
+      <p class="eyebrow">// 04: contact</p>
       <h2>Contact Me</h2>
       <p>Feel free to explore and reach out if you'd like to connect or collaborate!
         <br /><br />
@@ -81,6 +149,21 @@
   <footer>
     <p>Designed by Tory Jarvis | 2026</p>
   </footer>
+
+  <div id="command-palette" class="palette-overlay">
+    <div class="palette-panel">
+      <input id="palette-input" class="palette-input" type="text" placeholder="Type a command..." autocomplete="off" />
+      <ul id="palette-list" class="palette-list"></ul>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <button class="modal-close" aria-label="Close modal">&times;</button>
+    <img src="" alt="Full Size" id="modal-img" />
+  </div>
+
+  <script src="modal.js"></script>
+  <script src="commandPalette.js"></script>
 </body>
 
 </html>
